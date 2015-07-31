@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.2)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
     chef (12.4.1)
       chef-config (= 12.4.1)
       chef-zero (~> 4.2, >= 4.2.2)
@@ -34,12 +36,40 @@ GEM
       mixlib-log (~> 1.3)
       rack
       uuidtools (~> 2.1)
+    chefspec (4.3.0)
+      chef (>= 11.14)
+      fauxhai (~> 2.0)
+      rspec (~> 3.0)
     coderay (1.1.0)
+    columnize (0.9.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    excon (0.45.4)
+    fauxhai (2.3.0)
+      net-ssh
+      ohai
     ffi (1.9.10)
     ffi-yajl (2.2.2)
       libyajl2 (~> 1.2)
+    fog-aws (0.7.4)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (1.32.0)
+      builder
+      excon (~> 0.45)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-xml (0.1.2)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
+    formatador (0.2.5)
     hashie (2.1.2)
     highline (1.7.2)
     ipaddress (0.8.0)
@@ -47,9 +77,12 @@ GEM
       chef (>= 10.12)
       erubis (~> 2.7.0)
       net-ssh (>= 2.2.2, < 3.0)
+    knife-spec (1.0.0)
+      chef
     libyajl2 (1.2.0)
     method_source (0.8.2)
     mime-types (2.6.1)
+    mini_portile (0.6.2)
     mixlib-authentication (1.3.0)
       mixlib-log
     mixlib-cli (1.5.0)
@@ -66,6 +99,8 @@ GEM
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
     net-telnet (0.1.1)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     ohai (8.5.0)
       ffi (~> 1.9)
       ffi-yajl (~> 2.2)
@@ -83,6 +118,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.2.0)
+      byebug (~> 5.0)
+      pry (~> 0.10)
     rack (1.6.4)
     rake (10.4.2)
     rspec (3.3.0)
@@ -126,4 +164,8 @@ PLATFORMS
 
 DEPENDENCIES
   chef
+  chefspec
+  fog-aws
   knife-solo
+  knife-spec
+  pry-byebug

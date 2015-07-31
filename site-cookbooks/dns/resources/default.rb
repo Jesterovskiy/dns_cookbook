@@ -1,15 +1,16 @@
-#Base Resource
-actions :create, :delete  #Actions that we support.  Must be stated in our provider action :create do.
+actions :create, :delete
 
-default_action :create if defined?(default_action)  #Our default action, can be anything.
+default_action :create
 
-#Name Space
-attribute :base_name, :name_attribute => true, :kind_of => String, :required => false, :default => 'default'  #This is what is passed in kickstart_lwrp "<name>" do.
-
-#Example Parameters
-attribute :string_param, :kind_of => String, :required => false, :default => nil  #Here are four commonly used attribute types.
-attribute :boolean_param, :kind_of => [ TrueClass, FalseClass ], :required => false, :default => false
-attribute :array_param, :kind_of => Array, :required => false, :default => []
-attribute :hash_param, :kind_of => Hash, :required => false, :default => {}
-
-attr_accessor :exists  #This is a standard ruby accessor, use this to set flags for current state.
+attribute :instance_name,         :kind_of => String, :required => true, :name_attribute => true
+attribute :stack_name,            :kind_of => String, :required => true
+attribute :value,                 :kind_of => [ String, Array ]
+attribute :type,                  :kind_of => String, :required => true
+attribute :ttl,                   :kind_of => Integer, :default => 3600
+attribute :zone_id,               :kind_of => String
+attribute :aws_access_key_id,     :kind_of => String
+attribute :aws_secret_access_key, :kind_of => String
+# attribute :aws_session_token,     :kind_of => String
+attribute :overwrite,             :kind_of => [ TrueClass, FalseClass ], :default => true
+attribute :alias_target,          :kind_of => Hash
+attribute :mock,                  kind_of: [TrueClass, FalseClass], default: false
