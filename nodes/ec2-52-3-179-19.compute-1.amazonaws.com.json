@@ -4,5 +4,14 @@
   ],
   "automatic": {
     "ipaddress": "ec2-52-3-179-19.compute-1.amazonaws.com"
+  },
+  "route53": {
+    "instance_name": "test",
+    "stack_name": "test",
+    "value": "192.0.2.235",
+    "type": "A",
+    "zone_id": "ZXE1YQDJAVLMY",
+    "aws_access_key_id": "AKIAJ6ZYJBYPAMCCOFKQ",
+    "aws_secret_access_key": "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"
   }
 }
