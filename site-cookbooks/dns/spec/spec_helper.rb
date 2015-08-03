@@ -1,6 +1,9 @@
 # Added by ChefSpec
 require 'chefspec'
 require 'pry-byebug'
+require 'fog/aws'
+
+Dir[File.expand_path(__dir__) + '/shared/**/*.rb'].each { |f| require f }
 
 # Uncomment to use ChefSpec's Berkshelf extension
 # require 'chefspec/berkshelf'

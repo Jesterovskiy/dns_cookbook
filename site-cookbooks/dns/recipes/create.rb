@@ -2,7 +2,7 @@
 # Cookbook Name:: dns
 # Recipe:: create
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015
 #
 # All rights reserved - Do Not Redistribute
 #
