@@ -1,61 +1,83 @@
 dns Cookbook
 ============
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Create or Delete DNS record in Route53 service
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - dns needs toaster to brown your bagel.
+- `Ruby`
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
-#### dns::default
+#### dns::create
 <table>
   <tr>
-    <th>Key</th>
+    <th>Instance Name</th>
+    <th>Stack Name</th>
+    <th>Value</th>
     <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
+    <th>Zone ID</th>
+    <th>AWS Access Key ID</th>
+    <th>AWS Secret Access Key</th>
   </tr>
   <tr>
-    <td><tt>['dns']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td>name of instance</td>
+    <td>stack name</td>
+    <td>DNS IP addresses, separated by comma</td>
+    <td>DNS record type</td>
+    <td>DNS zone ID</td>
+    <td>access key id for AWS</td>
+    <td>secret access key for AWS</td>
+  </tr>
+</table>
+
+#### dns::delete
+<table>
+  <tr>
+    <th>Instance Name</th>
+    <th>Stack Name</th>
+    <th>Type</th>
+    <th>Zone ID</th>
+    <th>AWS Access Key ID</th>
+    <th>AWS Secret Access Key</th>
+  </tr>
+  <tr>
+    <td>name of instance</td>
+    <td>stack name</td>
+    <td>DNS record type</td>
+    <td>DNS zone ID</td>
+    <td>access key id for AWS</td>
+    <td>secret access key for AWS</td>
   </tr>
 </table>
 
 Usage
 -----
-#### dns::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
+#### dns::create
 Just include `dns` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[dns]"
+    "recipe[dns::create]"
+  ]
+}
+```
+
+#### dns::delete
+Just include `dns` in your node's `run_list`:
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[dns::delete]"
   ]
 }
 ```
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -65,4 +87,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Jester
